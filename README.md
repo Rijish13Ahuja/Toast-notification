@@ -1,6 +1,58 @@
-# Getting Started with Create React App
+# Toast Notification System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A reusable toast notification system built with React. This project provides a global toast notification mechanism with customizable messages, positions, and durations.
+
+## Features
+
+- **Global Accessibility:** The toast notifications can be triggered from anywhere in the application.
+- **Default Message Types:** Includes predefined message types (info, warning, error, success) with corresponding icons and styles.
+- **Custom Messages:** Allows for custom messages, styles, and icons.
+- **Positioning:** Toast notifications can be positioned at various places on the screen (e.g., top-right, bottom-center).
+- **Custom Delay:** Supports custom delay for auto-dismissal of the notifications.
+- **Responsive Design:** The design is responsive and visually appealing.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm (or yarn)
+- A code editor like Visual Studio Code
+
+### Installation
+
+ **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd toast-app
+   ```
+### Usage
+
+#### Toast Provider: Wrap your application with ToastProvider to provide context to the toast system.
+
+import { ToastProvider } from './components/ToastProvider';
+
+function App() {
+  return (
+    <ToastProvider>
+      {/* Your application components */}
+    </ToastProvider>
+  );
+}
+
+
+#### Triggering Toasts: Use the useToast hook to trigger a toast notification.
+
+import { useToast } from './components/ToastProvider';
+
+function SomeComponent() {
+  const { addToast } = useToast();
+
+  const handleClick = () => {
+    addToast('This is an info toast!', 'info');
+  };
+
+  return <button onClick={handleClick}>Show Info Toast</button>;
+}
 
 ## Available Scripts
 
