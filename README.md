@@ -27,7 +27,7 @@ A reusable toast notification system built with React. This project provides a g
    ```
 ### Usage
 
-#### Toast Provider: Wrap your application with ToastProvider to provide context to the toast system.
+1) Toast Provider: Wrap your application with ToastProvider to provide context to the toast system.
 
 import { ToastProvider } from './components/ToastProvider';
 
@@ -40,7 +40,7 @@ function App() {
 }
 
 
-#### Triggering Toasts: Use the useToast hook to trigger a toast notification.
+2) Triggering Toasts: Use the useToast hook to trigger a toast notification.
 
 import { useToast } from './components/ToastProvider';
 
