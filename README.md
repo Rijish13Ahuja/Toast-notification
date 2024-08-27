@@ -28,7 +28,7 @@ A reusable toast notification system built with React. This project provides a g
 ### Usage
 
 1) Toast Provider: Wrap your application with ToastProvider to provide context to the toast system.
-
+```bash
 import { ToastProvider } from './components/ToastProvider';
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
     </ToastProvider>
   );
 }
-
+```
 
 2) Triggering Toasts: Use the useToast hook to trigger a toast notification.
-
+```bash
 import { useToast } from './components/ToastProvider';
 
 function SomeComponent() {
@@ -53,7 +53,7 @@ function SomeComponent() {
 
   return <button onClick={handleClick}>Show Info Toast</button>;
 }
-
+```
 ## Available Scripts
 
 In the project directory, you can run:
