@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { ToastProvider, useToast } from '../src/components/ToastContext';
 
-function App() {
+
+const App = () => {
+  const { addToast } = useToast();
+
+  const triggerToast = () => {
+    addToast('This is an info toast!', {
+      type: 'info',
+      id: Math.random(),
+      delay: 5000,
+      position: 'top-right'
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Toast Notification</h1>
+      <button onClick={triggerToast}>Show Info Toast</button>
     </div>
   );
-}
+};
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <ToastProvider>
+      <App />
+    </ToastProvider>
+  );
+}
